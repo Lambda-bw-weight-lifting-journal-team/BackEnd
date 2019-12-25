@@ -14,7 +14,7 @@ router.post('/register', (req, res) => {
 
       User.addUser(newUser)
          .then(user => {
-            res.status(200).json(user);
+            res.status(201).json(user);
          })
          .catch(error => {
             res.status(500).json({ message: 'Problems adding user to database. Try again later.' });
@@ -37,7 +37,7 @@ router.post('/login', (req, res) => {
                   message: `Welcome ${username}`
                });
             } else {
-               res.status(401).json({message: 'Invalid credentails.'});
+               res.status(401).json({message: 'Username or password is invalid.'});
             }
          })
          .catch(error => {

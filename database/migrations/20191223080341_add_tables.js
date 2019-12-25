@@ -24,7 +24,7 @@ exports.up = function(knex) {
       tbl.string('name', 128)
          .notNullable();
 
-      tbl.integer('anount_lifted');
+      tbl.integer('amount_lifted');
 
       tbl.string('units', 128)
          .defaultTo('lbs')
