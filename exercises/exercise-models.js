@@ -39,4 +39,9 @@ function getExerciseById(id) {
 }
 
 function updateExercise() { }
-function deleteExercise() { }
+
+function deleteExercise(id) { 
+   return db('exercises')
+      .where({id})
+      .delete();
+}
