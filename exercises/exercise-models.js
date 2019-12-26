@@ -38,7 +38,11 @@ function getExerciseById(id) {
       .first();
 }
 
-function updateExercise() { }
+function updateExercise(id, changes) { 
+   return db('exercises')
+      .where({id})
+      .update(changes);
+}
 
 function deleteExercise(id) { 
    return db('exercises')
