@@ -19,14 +19,24 @@ function getUserExercises(userId) {
    // join users as u
    // on e.user_id = u.id
    // where u.id = 2;
-   
+
    return db('exercises as e')
       .join('users as u', "e.user_id", "=", "u.id")
       .select('e.id', 'e.user_id', 'e.name', 'e.amount_lifted', 'e.units', 'e.reps_completed', 'e.date', 'e.body_region')
       .where("e.user_id", userId);
 }
 
-function addExercise() {}
-function getExerciseById() {}
-function updateExercise() {}
-function deleteExercise() {}
+function addExercise(data) {
+   return db('exercises')
+      .insert(data)
+      .then(([id]) => getExerciseById(id) );
+}
+
+function getExerciseById(id) { 
+   return db('exercises')
+      .where("id", id)
+      .first();
+}
+
+function updateExercise() { }
+function deleteExercise() { }
