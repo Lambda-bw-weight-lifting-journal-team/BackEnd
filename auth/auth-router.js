@@ -34,6 +34,7 @@ router.post('/login', (req, res) => {
                const token = asignToken(user);
                res.status(200).json({
                   token,
+                  id: user.id,
                   message: `Welcome ${username}`
                });
             } else {
