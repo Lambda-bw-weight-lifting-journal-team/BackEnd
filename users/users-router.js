@@ -2,13 +2,13 @@ const express = require('express').Router;
 const router = express();
 const Users = require('./users-model');
 const Exercises = require('../exercises/exercise-models');
-const authorizeUser = require('../auth/auth-middleware').authenticate;
+const authenticateUser = require('../auth/auth-middleware').authenticate;
 const restrictUser = require('../auth/auth-middleware').restricted;
 
 // Users can log in and can create, review, update, and delete data on their workouts.
 
 // Get exercieses by user id.
-router.get('/:id/exercises', validateUserId, authorizeUser, restrictUser, (req, res) => {
+router.get('/:id/exercises', validateUserId, authenticateUser, restrictUser, (req, res) => {
    const id = req.params.id;
 
    Exercises.getUserExercises(id)
@@ -25,7 +25,7 @@ router.get('/:id/exercises', validateUserId, authorizeUser, restrictUser, (req, 
 });
 
 // Create a new exercise
-router.post('/:id/exercises', validateUserId, authorizeUser, restrictUser, (req, res) => {
+router.post('/:id/exercises', validateUserId, authenticateUser, restrictUser, (req, res) => {
    const newExercise = req.body;
    newExercise.user_id = req.params.id; // set user_id to params id.
 
