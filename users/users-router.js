@@ -7,6 +7,19 @@ const restrictUser = require('../auth/auth-middleware').restricted;
 
 // Users can log in and can create, review, update, and delete data on their workouts.
 
+// Get user by id
+router.get('/:id', validateUserId, authenticateUser, restrictUser, (req, res) => {
+   const id = req.params.id;
+
+   Users.getUserById(id)
+      .then(user => {
+         res.status(200).json(user);
+      })
+      .catch(error => {
+         res.status(500).json({message: 'Problems retrieving user'});
+      })
+})
+
 // Get exercieses by user id.
 router.get('/:id/exercises', validateUserId, authenticateUser, restrictUser, (req, res) => {
    const id = req.params.id;
