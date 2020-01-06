@@ -19,6 +19,70 @@ Both username and password is required. A successful login returns a token. Toke
 }
 ```
 
+**GET request to get user by id**
+- https://bw-weight-lifting.herokuapp.com/api/users/:id
+
+**__Example:__**
+```javascript
+{
+  "id": 1,
+  "username": "frodo",
+  "password": "$2a$08$RwMDBSYDe81x2X3tRlONCe7ZlqBMmN/B13imcOC8xLp9atX4r24nC",
+  "exercises": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "name": "bench press",
+      "amount_lifted": 120,
+      "units": "lbs",
+      "reps_completed": 3,
+      "date": "",
+      "body_region": "Chest"
+    },
+    {
+      "id": 2,
+      "user_id": 1,
+      "name": "bicep curls",
+      "amount_lifted": 70,
+      "units": "lbs",
+      "reps_completed": 3,
+      "date": "",
+      "body_region": "Biceps"
+    },
+    {
+      "id": 7,
+      "user_id": 1,
+      "name": "squats",
+      "amount_lifted": 180,
+      "units": "lbs",
+      "reps_completed": 3,
+      "date": "2019-12-25 23:48:26",
+      "body_region": "Legs"
+    },
+    {
+      "id": 8,
+      "user_id": 1,
+      "name": "squats",
+      "amount_lifted": 180,
+      "units": "lbs",
+      "reps_completed": 3,
+      "date": "2019-12-25 23:48:46",
+      "body_region": "Legs"
+    },
+    {
+      "id": 9,
+      "user_id": 1,
+      "name": "squats",
+      "amount_lifted": 180,
+      "units": "lbs",
+      "reps_completed": 3,
+      "date": "2019-12-25 23:50:44",
+      "body_region": "Legs"
+    }
+  ]
+}
+```
+
 **GET request to get all exercises for a user**
 - https://bw-weight-lifting.herokuapp.com/api/users/:id/exercises
 
