@@ -14,8 +14,8 @@ Both username and password is required. A successful login returns a token. Toke
 **__Example:__**
 ```javascript
 {
-   "username": "bilbo",
-   "password": "walk"
+   "username": "frodo",
+   "password": "ring"
 }
 ```
 
