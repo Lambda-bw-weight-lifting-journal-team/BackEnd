@@ -8,4 +8,4 @@ describe('index route', () => {
             expect(res.status).toBe(200);
          });
    });
-})
+});
