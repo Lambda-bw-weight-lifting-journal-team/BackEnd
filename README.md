@@ -7,10 +7,10 @@
 ### Login User
 Both username and password is required. A successful login returns a token. Token expires after an hour. After an hour, user will have to login again.
 
+### Register User
 **Register user route. POST request**
 - https://bw-weight-lifting.herokuapp.com/api/auth/register
 
-### Register User
 **__Example:__**
 ```javascript
 {
