@@ -5,7 +5,8 @@ module.exports = {
    addUser,
    findById,
    findBy,
-   getUserById
+   getUserById,
+   get
 }
 
 async function addUser(user) {
@@ -39,4 +40,8 @@ function getUserById(id) {
 
       return user;
    });
+}
+
+function get() {
+   return db('users');
 }
