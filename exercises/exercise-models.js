@@ -28,12 +28,7 @@ function getUserExercises(userId) {
 
 function addExercise(data) {
    return db('exercises')
-      .insert(data)
-      .then(ids => {
-         const [id] = ids;
-         return getExerciseById(id);
-      })
-      // .then(([id]) => getExerciseById(id) );
+      .insert(data);
 }
 
 function getExerciseById(id) { 
